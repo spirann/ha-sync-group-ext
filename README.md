@@ -117,20 +117,24 @@ area, or set its category, use the entity's own settings (gear icon)
 instead - that's now a first-class entity, so it works the same way as any
 other helper.
 
-## About the missing icon in the "Add Helper"/"Add Integration" picker
+## About the icon in the "Add Helper"/"Add Integration" picker
 
-The icon shown next to an integration's *name* in the "Add Integration" /
-"Add Helper" search list (before you've even configured anything) is not
-something a custom integration's code controls - Home Assistant's core
-frontend fetches those from the community-maintained
+As of Home Assistant 2026.3, custom integrations can ship their own brand
+icon directly instead of going through the community
 [`home-assistant/brands`](https://github.com/home-assistant/brands)
-repository. Now that this project is a public GitHub repo, submitting an
-`icon.png`/`logo.png` there via PR is possible if you want that polish -
-just ask and I'll prepare the assets.
+repository (which stopped accepting new custom-integration submissions -
+see the [announcement](https://developers.home-assistant.io/blog/2026/02/24/brands-proxy-api)).
+This repo includes that icon at
+`custom_components/sync_group_ext/brand/icon.png` (and `icon@2x.png`) - no
+extra configuration needed, Home Assistant picks it up automatically and
+it takes priority over anything from the CDN. If you're on an HA version
+older than 2026.3, the picker will just show the generic fallback icon
+until you update.
 
-What *is* already there is the entity-level icon: once a group is created,
-its Main switch shows the icon you picked (or the default `mdi:sync`) in
-the entity list, dashboards, etc., and you can change it any time.
+Separately, the entity-level icon has always worked: once a group is
+created, its Main switch shows the icon you picked (or the default
+`mdi:sync`) in the entity list, dashboards, etc., and you can change it any
+time.
 
 ## Notes / limitations
 
