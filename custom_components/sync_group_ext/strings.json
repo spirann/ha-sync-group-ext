@@ -1,0 +1,42 @@
+{
+  "title": "Sync Switch & Light Group",
+  "config": {
+    "step": {
+      "user": {
+        "title": "Create a sync group",
+        "description": "This creates a new 'Main' switch entity. Optionally link an existing switch/light entity as an additional master - useful when it can be triggered directly by its own device/integration (a physical button, a scene, another automation) rather than only through Main. Triggering either Main or the linked master turns every member to match. Triggering a member never affects other members, but it updates Main (and the linked master, if set): they turn off once every member is off, and turn on if a member turns on - without touching the other members. Unavailable entities are always ignored.",
+        "data": {
+          "name": "Name",
+          "icon": "Icon",
+          "linked_master": "Linked master entity (optional)",
+          "members": "Member entities"
+        }
+      }
+    },
+    "error": {
+      "need_one_member": "Select at least one member entity.",
+      "name_required": "Enter a name for this group.",
+      "linked_master_cannot_be_member": "The linked master entity can't also be one of the members."
+    },
+    "abort": {
+      "already_configured": "This sync group is already configured."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Edit sync group",
+        "description": "Update the icon, linked master, and member entities for this group. To rename the group or move it to an area, use the Main entity's own settings instead.",
+        "data": {
+          "icon": "Icon",
+          "linked_master": "Linked master entity (optional)",
+          "members": "Member entities"
+        }
+      }
+    },
+    "error": {
+      "need_one_member": "Select at least one member entity.",
+      "linked_master_cannot_be_member": "The linked master entity can't also be one of the members."
+    }
+  }
+}

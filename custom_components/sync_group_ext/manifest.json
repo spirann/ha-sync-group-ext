@@ -1,0 +1,12 @@
+{
+  "domain": "sync_group_ext",
+  "name": "Sync Switch & Light Group",
+  "codeowners": ["@spirann"],
+  "config_flow": true,
+  "documentation": "https://github.com/spirann/ha-sync-group-ext",
+  "integration_type": "helper",
+  "iot_class": "calculated",
+  "issue_tracker": "https://github.com/spirann/ha-sync-group-ext/issues",
+  "requirements": [],
+  "version": "4.0.0"
+}
